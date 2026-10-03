@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيقي الشخصي</title>
+    <style>
+        body {
+            background: #0f172a;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            font-size: 22px;
+            color: #38bdf8;
+            text-align: center;
+        }
+        .card {
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            background: #0f172a;
+            color: white;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 16px;
+            resize: none;
+        }
+        button {
+            width: 100%;
+            background: #38bdf8;
+            color: #0f172a;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #notes-list {
+            margin-top: 15px;
+            font-size: 14px;
+            background: #0f172a;
+            padding: 10px;
+            border-radius: 8px;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ملاحظاتي السريعة 📱</h1>
+    
+    <div class="card">
+        <textarea id="myInput" placeholder="اكتب فكرة أو ملاحظة هنا..."></textarea>
+        <button onclick="saveNote()">حفظ الملاحظة</button>
+    </div>
+
+    <div class="card">
+        <h3>الملاحظات المحفوظة:</h3>
+        <div id="notes-list">ما بعد كتبت شيء...</div>
+    </div>
+
+    <script>
+        function saveNote() {
+            let val = document.getElementById("myInput").value;
+            if(val.trim() !== "") {
+                document.getElementById("notes-list").innerHTML = val;
+                alert("تم الحفظ بنجاح!");
+            }
+        }
+    </script>
+</body>
+</html>
